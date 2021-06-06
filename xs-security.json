@@ -1,0 +1,20 @@
+{
+    "xsappname": "cap-unit-test-restrict",
+    "tenant-mode": "dedicated",
+    "description": "Security profile of called application",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.testingBooks",
+            "description": "Testing books"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "testingBooks",
+            "description": "Testing books",
+            "scope-references": [
+                "$XSAPPNAME.testingBooks"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+# Generated manifest.yml based on template version 0.1.0
+# appName = cap-unit-test-restrict
+# language=nodejs
+# multitenancy=false
+---
+applications:
+# -----------------------------------------------------------------------------------
+# Backend Service
+# -----------------------------------------------------------------------------------
+- name: cap-unit-test-restrict-srv
+  random-route: true  # for development only
+  path: gen/srv
+  memory: 256M
+  buildpack: nodejs_buildpack
+  services:
+  - cap-unit-test-restrict-db
+
+# -----------------------------------------------------------------------------------
+# HANA Database Content Deployer App
+# -----------------------------------------------------------------------------------
+- name: cap-unit-test-restrict-db-deployer
+  path: gen/db
+  no-route: true
+  health-check-type: process
+  memory: 256M
+  instances: 1
+  buildpack: nodejs_buildpack
+  services:
+  - cap-unit-test-restrict-db

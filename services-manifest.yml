@@ -1,0 +1,8 @@
+# Generated services-manifest.yml based on template version 0.1.0
+# appName = cap-unit-test-restrict
+---
+create-services:
+# ------------------------------------------------------------
+  - name:   cap-unit-test-restrict-db
+    broker: hana  # 'hanatrial' on trial landscapes
+    plan: "hdi-shared"

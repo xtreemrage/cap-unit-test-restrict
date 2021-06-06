@@ -1,0 +1,7 @@
+### GET metadata
+GET http://localhost:4004/catalog/$metadata
+Authorization: Basic Y2FwOmNhcA==
+
+### GET all books
+GET http://localhost:4004/catalog/Books
+Authorization: Basic Y2FwOmNhcA==
